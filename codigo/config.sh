@@ -9,7 +9,7 @@ python3 -m venv venv
 source venv/bin/activate
 
 # Clona tu repo de GitHub
-git clone https://github.com/tuusuario/taller-ec2.git
+git clone https://github.com/JulioJoseJ/tallerEC3.git
 cd taller-ec2
 
 # Instala las dependencias
