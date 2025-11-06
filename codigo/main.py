@@ -5,12 +5,15 @@ from botocore.exceptions import ClientError
 import json
 from datetime import datetime
 import uuid
+from botocore.config import Config
 
 app = FastAPI(title="Taller EC2 API", version="1.0.0")
 
 # Configuración de S3
 S3_BUCKET_NAME = "mamboprimero"  # Cambiar por tu bucket
-s3_client = boto3.client('s3')
+session = boto3.Session()
+s3_client = session.client('s3', config=Config(signature_version='s3v4'))
+
 
 # Modelo de validación con Pydantic
 class Persona(BaseModel):
